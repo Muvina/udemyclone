@@ -18,19 +18,7 @@ body{
     z-index: 1;
 
 }
-.image{
-    position:relative;
-}
-.image__box{
-    width:35%;
-    background-color: white;
-    position:absolute;
-    top:10%;
-    left:10%;
-    padding:2%;
-    border: 1px solid black;
 
-}
 .navbar__s1__title{
     color:rgb(145, 28, 168);
 }
@@ -70,9 +58,14 @@ body{
     padding: 10px;
     margin: 5px;
     border-radius: 25px;
+    border:1px black solid;
 }
 .catogories ul li:hover{
-    color:rgb(230, 199, 199);
+    transition:1s;
+    background-color: transparent;
+    cursor: pointer;
+    color:black;
+    border:1px black solid;
 }
 .image img{
     width: 100%;
@@ -171,4 +164,32 @@ p{
 }
 .learning:hover .learning__popup{
     display: block;
+}
+
+.image{
+    position:relative;
+}
+.image__box{
+    width:35%;
+    background-color: white;
+    position:absolute;
+    top:10%;
+    left:10%;
+    padding:2%;
+    border: 1px solid black;
+    animation-name:zoom;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    opacity:0;
+    animation-fill-mode: forwards;
+}
+@keyframes zoom{
+    0%{
+        transform:scale(0);
+        opacity:0;
+    }
+    100%{
+        transform:scale(1);
+        opacity:1
+    }
 }
